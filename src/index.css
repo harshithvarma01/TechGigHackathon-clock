@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Orientation App Design System - Mobile First
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Background Gradients */
+    --bg-gradient-primary: linear-gradient(135deg, hsl(250 100% 10%), hsl(260 100% 20%));
+    --bg-gradient-alarm: linear-gradient(135deg, hsl(200 100% 15%), hsl(220 100% 25%));
+    --bg-gradient-stopwatch: linear-gradient(135deg, hsl(160 100% 15%), hsl(180 100% 25%));
+    --bg-gradient-timer: linear-gradient(135deg, hsl(320 100% 15%), hsl(340 100% 25%));
+    --bg-gradient-weather: linear-gradient(135deg, hsl(40 100% 20%), hsl(60 100% 30%));
+
+    /* Core Colors */
+    --background: 250 100% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 250 50% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 250 50% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Brand Colors */
+    --primary: 260 100% 70%;
+    --primary-foreground: 250 100% 10%;
+
+    --secondary: 250 30% 25%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 250 30% 20%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 280 100% 65%;
+    --accent-foreground: 250 100% 10%;
+
+    /* Status Colors */
+    --success: 120 100% 50%;
+    --success-foreground: 120 100% 10%;
+
+    --warning: 45 100% 55%;
+    --warning-foreground: 45 100% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Interactive Elements */
+    --border: 250 30% 25%;
+    --input: 250 30% 20%;
+    --ring: 260 100% 70%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  html, body, #root {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer components {
+  /* Gradient Backgrounds */
+  .bg-gradient-alarm {
+    background: var(--bg-gradient-alarm);
+  }
+  
+  .bg-gradient-stopwatch {
+    background: var(--bg-gradient-stopwatch);
+  }
+  
+  .bg-gradient-timer {
+    background: var(--bg-gradient-timer);
+  }
+  
+  .bg-gradient-weather {
+    background: var(--bg-gradient-weather);
+  }
+
+  /* Glass Effect */
+  .glass {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Time Display */
+  .time-display {
+    font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+
+  /* Touch Friendly Buttons */
+  .touch-button {
+    min-height: 60px;
+    min-width: 60px;
+    touch-action: manipulation;
+  }
+}
